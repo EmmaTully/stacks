@@ -1,0 +1,16 @@
+{
+  "name": "dealer-ui",
+  "version": "1.0.0",
+  "description": "First Class Auto Sales - Dealer Dashboard UI",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": ["dealer", "auto-sales", "dashboard", "ui"],
+  "author": "Emma Tully",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
