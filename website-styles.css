@@ -162,8 +162,9 @@ body {
     color: white;
     padding: 16px 32px;
     border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
     border: none;
     cursor: pointer;
     display: inline-flex;
@@ -171,6 +172,7 @@ body {
     gap: 12px;
     transition: all 0.3s ease;
     box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+    letter-spacing: -0.01em;
 }
 
 .btn-primary.activate:hover {
