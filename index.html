@@ -3,356 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Class Auto Sales - Dealer Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Take-Next | AI-Native BDC for Auto Dealers</title>
+    <meta name="description" content="The first AI-native BDC replacement built exclusively for auto dealers. Flip a switch and your virtual BDC is live - no hiring, training, or turnover.">
+    <link rel="stylesheet" href="website-styles.css?v=37">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Navigation Bar -->
-    <header class="top-nav">
-        <div class="nav-left">
-            <div class="logo">
-                <i class="fas fa-car"></i>
-                <span>First Class Auto Sales</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="logo-symbol" width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Brain body with neural folds -->
+                    <path d="M50 15C35 15 25 25 25 40C25 42 25.5 44 26 46C24 48 22 50 22 53C22 58 26 62 30 62C32 62 34 61 35 59C37 61 40 62 43 62V68C41 70 40 73 42 75C44 77 47 76 49 74L50 73L51 74C53 76 56 77 58 75C60 73 59 70 57 68V62C60 62 63 61 65 59C66 61 68 62 70 62C74 62 78 58 78 53C78 50 76 48 74 46C74.5 44 75 42 75 40C75 25 65 15 50 15Z" fill="#3b82f6"/>
+                    <!-- Tentacles -->
+                    <path d="M35 62C33 65 30 68 28 72C26 76 28 80 32 78C36 76 38 70 35 62Z" fill="#3b82f6"/>
+                    <path d="M43 62C41 66 38 70 35 74C33 78 35 82 39 80C43 78 45 72 43 62Z" fill="#3b82f6"/>
+                    <path d="M57 62C59 66 62 70 65 74C67 78 65 82 61 80C57 78 55 72 57 62Z" fill="#3b82f6"/>
+                    <path d="M65 62C67 65 70 68 72 72C74 76 72 80 68 78C64 76 62 70 65 62Z" fill="#3b82f6"/>
+                </svg>
+                <span class="logo-text">Take-Next</span>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="nav-link">Sign in</a>
+                <button class="btn-nav-demo">Get a demo</button>
             </div>
         </div>
-        <nav class="nav-center">
-            <a href="#" class="nav-item">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fas fa-phone"></i>
-                <span>Dialer</span>
-            </a>
-            <a href="#" class="nav-item active">
-                <i class="fas fa-comments"></i>
-                <span>Conversations</span>
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fas fa-inbox"></i>
-                <span>Inbox</span>
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fas fa-users"></i>
-                <span>Contacts</span>
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fas fa-building"></i>
-                <span>Companies</span>
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fas fa-calendar"></i>
-                <span>Calendar</span>
-            </a>
-        </nav>
-        <div class="nav-right">
-            <button class="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-            <div class="user-profile">
-                <img src="https://via.placeholder.com/32x32/4CAF50/white?text=W" alt="User" class="profile-img">
-                <span>Work</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-headline">
+                    CRM is <span class="dead-text">dead</span> 💀
+                </h1>
+                <h2 class="hero-subheadline">
+                    The future is <em>interfaceless</em>
+                </h2>
+                <p class="hero-tagline">
+                    Click to kill your CRM and activate your swarm of BDC AI-agents
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary activate">
+                        Activate
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <div class="main-container">
-        <!-- Left Sidebar - AI Conversation Queue -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2>AI Workspace</h2>
-                <div class="ai-status">
-                    <div class="status-indicator active"></div>
-                    <span>AI Active</span>
-                </div>
-            </div>
-            
-            <!-- Conversation Queue Filters -->
-            <div class="queue-filters">
-                <button class="filter-btn active" data-filter="active">
-                    <i class="fas fa-robot"></i>
-                    <span>AI Handling</span>
-                    <span class="count">8</span>
-                </button>
-                <button class="filter-btn" data-filter="escalated">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Needs Human</span>
-                    <span class="count">2</span>
-                </button>
-                <button class="filter-btn" data-filter="completed">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Completed</span>
-                    <span class="count">15</span>
-                </button>
-            </div>
-
-            <!-- Active Conversations List -->
-            <div class="conversations-list">
-                <div class="conversation-item active" data-conversation="1">
-                    <div class="conversation-header">
-                        <div class="contact-info">
-                            <div class="avatar">EM</div>
-                            <div class="contact-details">
-                                <span class="name">Emma Martinez</span>
-                                <span class="phone">(512) 555-0123</span>
-                            </div>
-                        </div>
-                        <div class="conversation-status">
-                            <div class="ai-indicator typing">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <span class="time">2m ago</span>
-                        </div>
+    <!-- Comparison Cards Section -->
+    <section class="comparison-cards">
+        <div class="middle-text">THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED THE CRM WE KILLED </div>
+        <div class="container">
+            <div class="cards-grid">
+                <div class="comparison-card traditional">
+                    <h3>Traditional BDC</h3>
+                    <div class="price">
+                        <span class="price-amount">$50K+</span>
+                        <span class="price-period">/year</span>
                     </div>
-                    <div class="last-message">
-                        <span class="message-preview">AI: Here's the link to our credit application...</span>
-                    </div>
-                    <div class="lead-tags">
-                        <span class="tag hot">Hot Lead</span>
-                        <span class="tag source">CarGurus</span>
+                    <p class="price-description">Per BDC representative</p>
+                    
+                    <div class="features-list">
+                        <div class="feature negative">
+                            <i class="fas fa-times"></i>
+                            <span>Limited hours coverage</span>
+                        </div>
+                        <div class="feature negative">
+                            <i class="fas fa-times"></i>
+                            <span>High turnover risk</span>
+                        </div>
+                        <div class="feature negative">
+                            <i class="fas fa-times"></i>
+                            <span>Inconsistent performance</span>
+                        </div>
+                        <div class="feature negative">
+                            <i class="fas fa-times"></i>
+                            <span>Training & management overhead</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="conversation-item escalated" data-conversation="2">
-                    <div class="conversation-header">
-                        <div class="contact-info">
-                            <div class="avatar">JD</div>
-                            <div class="contact-details">
-                                <span class="name">John Davis</span>
-                                <span class="phone">(512) 565-7979</span>
-                            </div>
-                        </div>
-                        <div class="conversation-status">
-                            <div class="escalation-flag">
-                                <i class="fas fa-hand-paper"></i>
-                            </div>
-                            <span class="time">5m ago</span>
-                        </div>
+                <div class="comparison-card take-next featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Take-Next AI BDC</h3>
+                    <div class="price">
+                        <span class="price-amount">$2,500</span>
+                        <span class="price-period">/month</span>
                     </div>
-                    <div class="last-message">
-                        <span class="message-preview">Customer: I need to speak to a manager about pricing...</span>
-                    </div>
-                    <div class="lead-tags">
-                        <span class="tag warm">Warm Lead</span>
-                        <span class="tag source">Facebook</span>
-                    </div>
-                </div>
-
-                <div class="conversation-item" data-conversation="3">
-                    <div class="conversation-header">
-                        <div class="contact-info">
-                            <div class="avatar">SM</div>
-                            <div class="contact-details">
-                                <span class="name">Sarah Miller</span>
-                                <span class="phone">(555) 123-4567</span>
-                            </div>
+                    <p class="price-description">Complete BDC replacement</p>
+                    
+                    <div class="features-list">
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>True 24/7 coverage</span>
                         </div>
-                        <div class="conversation-status">
-                            <div class="ai-indicator waiting">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <span class="time">15m ago</span>
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>Zero turnover</span>
+                        </div>
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>Consistent performance</span>
+                        </div>
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>No management needed</span>
+                        </div>
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>Instant setup</span>
+                        </div>
+                        <div class="feature positive">
+                            <i class="fas fa-check"></i>
+                            <span>Always improving</span>
                         </div>
                     </div>
-                    <div class="last-message">
-                        <span class="message-preview">AI: Thanks for your interest! What's your budget range?</span>
-                    </div>
-                    <div class="lead-tags">
-                        <span class="tag cold">Cold Lead</span>
-                        <span class="tag source">AutoTrader</span>
+                    
+                    <div class="button-wrapper">
+                        <button class="btn-primary card-cta">Start Free Trial</button>
                     </div>
                 </div>
             </div>
-        </aside>
+        </div>
+    </section>
 
-        <!-- Main Content Area - Active Conversation Thread -->
-        <main class="content">
-            <!-- Conversation Header -->
-            <div class="conversation-header-main">
-                <div class="contact-info-main">
-                    <div class="avatar-large">EM</div>
-                    <div class="contact-details-main">
-                        <h2>Emma Martinez</h2>
-                        <p>(512) 555-0123 • CarGurus Lead • 2024 Honda Civic</p>
-                    </div>
-                </div>
-                <div class="conversation-actions">
-                    <button class="action-btn escalate">
-                        <i class="fas fa-hand-paper"></i>
-                        <span>Escalate to Human</span>
-                    </button>
-                    <button class="action-btn take-over">
-                        <i class="fas fa-user"></i>
-                        <span>Take Over</span>
-                    </button>
-                    <div class="ai-status-main">
-                        <div class="ai-indicator typing">
-                            <i class="fas fa-robot"></i>
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <h2>The BDC Hiring Nightmare is Over</h2>
+                <div class="problem-grid">
+                    <div class="problem-item">
+                        <div class="problem-icon">
+                            <i class="fas fa-dollar-sign"></i>
                         </div>
-                        <span>AI Typing...</span>
+                        <h3>Expensive to Hire</h3>
+                        <p>BDC reps cost $40-60K annually plus benefits, training, and management overhead.</p>
+                    </div>
+                    <div class="problem-item">
+                        <div class="problem-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3>High Turnover</h3>
+                        <p>Average BDC turnover is 67% annually. Constant recruiting and retraining cycles.</p>
+                    </div>
+                    <div class="problem-item">
+                        <div class="problem-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Inconsistent Coverage</h3>
+                        <p>Sick days, vacations, breaks, and after-hours mean missed opportunities.</p>
+                    </div>
+                    <div class="problem-item">
+                        <div class="problem-icon">
+                            <i class="fas fa-chart-line-down"></i>
+                        </div>
+                        <h3>Inconsistent Performance</h3>
+                        <p>Human variability in response times, follow-ups, and lead qualification.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Conversation Thread -->
-            <div class="conversation-thread">
-                <div class="message incoming">
-                    <div class="message-content">
-                        <p>Hi! I'm interested in the 2024 Honda Civic you have listed. Is it still available?</p>
-                    </div>
-                    <div class="message-meta">
-                        <span class="sender">Emma Martinez</span>
-                        <span class="time">Today 2:15 PM</span>
-                    </div>
-                </div>
-
-                <div class="message outgoing ai">
-                    <div class="message-content">
-                        <p>Hi Emma! Yes, the 2024 Honda Civic is still available. It's a great choice! Can I get some information to help you with the next steps?</p>
-                    </div>
-                    <div class="message-meta">
-                        <span class="sender">AI Assistant</span>
-                        <span class="time">Today 2:16 PM</span>
-                        <div class="ai-badge">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="message incoming">
-                    <div class="message-content">
-                        <p>Sure! I'm looking to finance it. What do I need to get started?</p>
-                    </div>
-                    <div class="message-meta">
-                        <span class="sender">Emma Martinez</span>
-                        <span class="time">Today 2:18 PM</span>
-                    </div>
-                </div>
-
-                <div class="message outgoing ai">
-                    <div class="message-content">
-                        <p>Perfect! I can help you get pre-approved right now. Here's the link to our secure online credit application: <a href="#">Apply Now</a></p>
-                        <p>It takes about 3 minutes to complete and you'll get an instant decision. Would you like to fill that out?</p>
-                    </div>
-                    <div class="message-meta">
-                        <span class="sender">AI Assistant</span>
-                        <span class="time">Today 2:19 PM</span>
-                        <div class="ai-badge">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Typing Indicator -->
-                <div class="message outgoing ai typing-message">
-                    <div class="message-content">
-                        <div class="typing-indicator">
-                            <div class="typing-dot"></div>
-                            <div class="typing-dot"></div>
-                            <div class="typing-dot"></div>
-                        </div>
-                    </div>
-                    <div class="message-meta">
-                        <span class="sender">AI Assistant</span>
-                        <span class="time">Typing...</span>
-                        <div class="ai-badge">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                </div>
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Meet Your AI-Native BDC</h2>
+                <p>Take-Next replaces your entire BDC department with AI that never sleeps, never quits, and never misses a lead.</p>
             </div>
-
-            <!-- AI Override Panel -->
-            <div class="ai-override-panel">
-                <div class="override-header">
-                    <h3>AI Draft Response</h3>
-                    <div class="confidence-score">
-                        <span>Confidence: 95%</span>
-                        <div class="confidence-bar">
-                            <div class="confidence-fill" style="width: 95%"></div>
-                        </div>
+            <div class="solution-grid">
+                <div class="solution-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <h3>Instant Response</h3>
+                    <p>Responds to every lead in under 30 seconds, 24/7. No more lost opportunities due to slow response times.</p>
                 </div>
-                <div class="draft-message">
-                    <p>Great! Once you complete the application, I'll have our finance manager review it and get back to you with your approval details. In the meantime, would you like to schedule a time to see the vehicle in person?</p>
+                <div class="solution-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Native Intelligence</h3>
+                    <p>Built from the ground up with AI. Not a chatbot add-on, but true AI that understands automotive sales.</p>
                 </div>
-                <div class="override-actions">
-                    <button class="btn-secondary edit-draft">Edit Draft</button>
-                    <button class="btn-primary send-draft">Send Message</button>
+                <div class="solution-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Seamless Handoffs</h3>
+                    <p>When AI reaches its limits, it seamlessly escalates to your sales team with full context and conversation history.</p>
                 </div>
-            </div>
-        </main>
-
-        <!-- Right Panel - Lead Context -->
-        <aside class="right-panel">
-            <div class="panel-section">
-                <h3>Lead Information</h3>
-                <div class="lead-details">
-                    <div class="detail-row">
-                        <span class="label">Source:</span>
-                        <span class="value">CarGurus</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Interest:</span>
-                        <span class="value">2024 Honda Civic</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Lead Score:</span>
-                        <span class="value hot">Hot (85%)</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Budget:</span>
-                        <span class="value">$25,000 - $30,000</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel-section">
-                <h3>AI Actions Taken</h3>
-                <div class="ai-actions">
-                    <div class="action-item">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>Sent welcome message</span>
-                        <span class="action-time">2:16 PM</span>
-                    </div>
-                    <div class="action-item">
-                        <i class="fas fa-link"></i>
-                        <span>Shared credit application</span>
-                        <span class="action-time">2:19 PM</span>
-                    </div>
-                    <div class="action-item pending">
-                        <i class="fas fa-calendar"></i>
-                        <span>Scheduling appointment...</span>
-                        <span class="action-time">Pending</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel-section">
-                <h3>Quick Actions</h3>
-                <div class="quick-actions">
-                    <button class="quick-btn">
-                        <i class="fas fa-phone"></i>
-                        <span>Call Customer</span>
-                    </button>
-                    <button class="quick-btn">
-                        <i class="fas fa-calendar-plus"></i>
-                        <span>Book Appointment</span>
-                    </button>
-                    <button class="quick-btn">
+                <div class="solution-feature">
+                    <div class="feature-icon">
                         <i class="fas fa-car"></i>
-                        <span>Show Inventory</span>
-                    </button>
-                    <button class="quick-btn">
-                        <i class="fas fa-calculator"></i>
-                        <span>Payment Calculator</span>
-                    </button>
+                    </div>
+                    <h3>Dealer-Only Focus</h3>
+                    <p>Built exclusively for auto dealers. Deep integration with DMS, inventory, and automotive workflows.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Zero Setup Time</h3>
+                    <p>Flip a switch and your AI BDC is live. No complex setup, training, or integration nightmares.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Always Improving</h3>
+                    <p>AI learns from every interaction, getting smarter and more effective over time without additional training.</p>
                 </div>
             </div>
-        </aside>
-    </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Take-Next. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="website-script.js"></script>
 </body>
 </html>
