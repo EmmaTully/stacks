@@ -633,5 +633,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     images.forEach(img => imageObserver.observe(img));
 
+// Features section interactivity - REMOVED (using grid layout now)
+/*
+const featureCards = document.querySelectorAll('.feature-card');
+const featureContents = document.querySelectorAll('.feature-content');
+    
+    console.log('Features JavaScript loaded!');
+    console.log('Found feature cards:', featureCards.length);
+    console.log('Found feature contents:', featureContents.length);
+
+    if (featureCards.length > 0 && featureContents.length > 0) {
+        featureCards.forEach((card, index) => {
+            console.log(`Card ${index}:`, card.getAttribute('data-feature'));
+            
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const featureId = this.getAttribute('data-feature');
+                console.log('Clicked card with data-feature:', featureId);
+                
+                // Remove active from all cards and contents
+                featureCards.forEach(c => c.classList.remove('active'));
+                featureContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked card
+                this.classList.add('active');
+                
+                // Find and activate corresponding content
+                const targetContent = document.getElementById(featureId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    console.log('Activated content:', featureId);
+                } else {
+                    console.error('Could not find content with ID:', featureId);
+                }
+            });
+            
+            // Also add hover functionality
+            card.addEventListener('mouseenter', function() {
+                const featureId = this.getAttribute('data-feature');
+                
+                // Remove active from all cards and contents
+                featureCards.forEach(c => c.classList.remove('active'));
+                featureContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active to hovered card
+                this.classList.add('active');
+                
+                // Find and activate corresponding content
+                const targetContent = document.getElementById(featureId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    } else {
+        console.error('Feature cards or contents not found!');
+    }
+*/
+
     console.log('Take-Next website loaded successfully!');
 });
