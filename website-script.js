@@ -1,5 +1,69 @@
 // Website JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Show industry selection on page load
+    showIndustrySelection();
+    
+    function showIndustrySelection() {
+        // Create modal overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'industry-overlay';
+        
+        // Create modal content
+        const modal = document.createElement('div');
+        modal.className = 'industry-modal';
+        
+        modal.innerHTML = `
+            <div class="industry-header">
+                <h3>Select Your Industry</h3>
+            </div>
+            <div class="industry-options">
+                <button class="industry-btn" data-industry="automotive">
+                    <span>Automotive</span>
+                </button>
+                <button class="industry-btn" data-industry="b2b">
+                    <span>B2B</span>
+                </button>
+            </div>
+        `;
+        
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        
+        // Add blur to background
+        document.body.style.overflow = 'hidden';
+        
+        // No blur - keep background sharp
+        // const elementsToBlur = document.querySelectorAll('nav, section, footer');
+        // elementsToBlur.forEach(element => {
+        //     element.style.filter = 'blur(2px)';
+        //     element.style.transition = 'filter 0.3s ease';
+        // });
+        
+        // Add event listeners
+        const industryButtons = modal.querySelectorAll('.industry-btn');
+        industryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const industry = this.getAttribute('data-industry');
+                console.log('Industry selected:', industry);
+                
+                // Remove modal and restore scroll
+                document.body.style.overflow = '';
+                
+                // No blur cleanup needed since we're not blurring
+                // const elementsToBlur = document.querySelectorAll('nav, section, footer');
+                // elementsToBlur.forEach(element => {
+                //     element.style.filter = '';
+                // });
+                
+                if (overlay && overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                }
+                
+                // Store selection for future use
+                localStorage.setItem('selectedIndustry', industry);
+            });
+        });
+    }
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     navLinks.forEach(link => {
@@ -189,12 +253,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>Warning</h3>
             </div>
             <div class="warning-content">
-                <p>You are about to activate your AI BDC-swarm.</p>
-                <p>Would you like to proceed?</p>
+                <p>Deploy AI BDC swarm now?</p>
             </div>
             <div class="warning-actions">
-                <button class="btn-warning-no">No</button>
-                <button class="btn-warning-yes">Yes</button>
+                <button class="btn-warning-no">Cancel</button>
+                <button class="btn-warning-yes">Activate</button>
             </div>
         `;
         
