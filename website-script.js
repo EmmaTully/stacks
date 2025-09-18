@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Activate button handler with warning popup
+    // Activate button handler - direct to lead form
     const activateButtons = document.querySelectorAll('.btn-primary.activate, .card-cta');
     activateButtons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -210,8 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = 'scale(1)';
             }, 150);
             
-            // Show warning popup
-            showActivationWarning();
+            // Show lead capture form directly
+            showLeadCaptureForm();
         });
     });
 
