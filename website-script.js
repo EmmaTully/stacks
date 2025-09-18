@@ -1,7 +1,7 @@
 // Website JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Show industry selection on page load
-    showIndustrySelection();
+    // Industry selection popup removed - no longer needed
+    // showIndustrySelection();
     
     function showIndustrySelection() {
         // Create modal overlay
